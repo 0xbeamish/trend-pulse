@@ -30,14 +30,15 @@
       ],
       dataSources: ["Artemis TVL Dashboard"],
       artemisData: {
+        url: "https://app.artemisanalytics.com/asset/solana",
         metrics: [
           { label: "Solana TVL", value: "$15.2B", delta: "+8.4%", period: "7d" },
           { label: "USDC Inflows", value: "$2.1B", delta: "+23.7%", period: "7d" },
           { label: "DeFi Protocols", value: "127", delta: "+12", period: "30d" }
         ],
         chart: {
-          label: "Solana DeFi TVL (30d)",
-          values: [9.8, 10.1, 10.4, 10.2, 10.6, 10.9, 11.1, 11.0, 11.3, 11.5, 11.4, 11.8, 12.0, 12.3, 12.1, 12.5, 12.7, 12.9, 13.1, 13.4, 13.6, 13.8, 14.0, 14.2, 14.5, 14.3, 14.6, 14.8, 15.0, 15.2],
+          label: "Solana DeFi TVL",
+          values: [5.1,5.3,5.2,5.4,5.6,5.5,5.7,5.8,5.9,5.7,5.8,6.0,6.1,6.3,6.2,6.4,6.5,6.3,6.5,6.7,6.8,6.9,7.0,7.1,7.0,7.2,7.3,7.5,7.4,7.6,7.7,7.5,7.6,7.8,7.9,8.0,8.1,8.0,8.2,8.3,8.4,8.5,8.6,8.7,8.5,8.7,8.8,8.9,9.0,9.1,9.2,9.3,9.4,9.3,9.5,9.6,9.7,9.8,9.9,10.0,9.8,10.1,10.4,10.2,10.6,10.9,11.1,11.0,11.3,11.5,11.4,11.8,12.0,12.3,12.1,12.5,12.7,12.9,13.1,13.4,13.6,13.8,14.0,14.2,14.5,14.3,14.6,14.8,15.0,15.2],
           unit: "$B"
         }
       },
@@ -60,14 +61,15 @@
       ],
       dataSources: ["Artemis Stablecoin Dashboard"],
       artemisData: {
+        url: "https://app.artemisanalytics.com/stablecoins",
         metrics: [
           { label: "USDC Supply", value: "$48.3B", delta: "+5.2%", period: "30d" },
           { label: "Total Stablecoin Supply", value: "$178B", delta: "+3.1%", period: "30d" },
           { label: "USDC Dominance", value: "27.1%", delta: "+0.8%", period: "30d" }
         ],
         chart: {
-          label: "USDC Market Cap (30d)",
-          values: [42.1, 42.5, 42.8, 43.0, 43.2, 43.5, 43.8, 44.0, 44.3, 44.5, 44.8, 45.0, 45.2, 45.5, 45.8, 46.0, 46.2, 46.4, 46.6, 46.8, 47.0, 47.1, 47.3, 47.5, 47.6, 47.8, 48.0, 48.1, 48.2, 48.3],
+          label: "USDC Market Cap",
+          values: [34.0,34.2,34.5,34.3,34.6,34.8,35.0,35.2,35.1,35.3,35.5,35.7,35.6,35.8,36.0,36.2,36.4,36.3,36.5,36.7,36.9,37.0,37.2,37.1,37.3,37.5,37.7,37.8,38.0,38.2,38.1,38.3,38.5,38.7,38.9,39.0,39.2,39.4,39.3,39.5,39.7,39.9,40.0,40.2,40.4,40.3,40.5,40.7,40.9,41.0,41.2,41.4,41.3,41.5,41.7,41.9,42.0,42.1,42.3,42.5,42.1,42.5,42.8,43.0,43.2,43.5,43.8,44.0,44.3,44.5,44.8,45.0,45.2,45.5,45.8,46.0,46.2,46.4,46.6,46.8,47.0,47.1,47.3,47.5,47.6,47.8,48.0,48.1,48.2,48.3],
           unit: "$B"
         }
       },
@@ -336,13 +338,17 @@
     '</article>';
   }
 
+  /* ========== INLINE CHART ID COUNTER ========== */
+  var inlineChartCounter = 0;
+
   /* Render inline Artemis data panel for a trend card */
   function renderArtemisInlinePanel(data) {
-    var html = '<div class="artemis-inline-panel">';
+    var panelId = "artemis-panel-" + (inlineChartCounter++);
+    var html = '<div class="artemis-inline-panel" id="' + panelId + '">';
 
-    /* Chart */
+    /* Chart with timeframe toggles */
     if (data.chart && data.chart.values && data.chart.values.length > 1) {
-      html += renderInlineChart(data.chart);
+      html += renderInlineChart(data.chart, data.url, panelId);
     }
 
     /* Metric pills */
@@ -352,33 +358,94 @@
         var deltaStr = m.delta || "";
         var isPositive = deltaStr.charAt(0) === "+";
         var isNegative = deltaStr.charAt(0) === "-";
-        var deltaClass = isPositive ? "positive" : (isNegative ? "negative" : "flat");
+        var dCls = isPositive ? "positive" : (isNegative ? "negative" : "flat");
         var periodStr = m.period ? ' <span class="metric-period">' + m.period + '</span>' : '';
         return '<div class="artemis-inline-metric">' +
           '<div class="artemis-inline-metric-label">' + escapeHtml(m.label) + '</div>' +
           '<div class="artemis-inline-metric-row">' +
             '<span class="artemis-inline-metric-value">' + escapeHtml(m.value) + '</span>' +
-            (deltaStr ? '<span class="artemis-inline-metric-delta ' + deltaClass + '">' + escapeHtml(deltaStr) + periodStr + '</span>' : '') +
+            (deltaStr ? '<span class="artemis-inline-metric-delta ' + dCls + '">' + escapeHtml(deltaStr) + periodStr + '</span>' : '') +
           '</div>' +
         '</div>';
       }).join("");
       html += '</div>';
     }
 
-    /* Powered by badge */
+    /* Footer with link to Artemis */
+    var footerUrl = data.url || "https://app.artemisanalytics.com";
     html += '<div class="artemis-inline-footer">' +
-      '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>' +
-      ' Data via Artemis Analytics</div>';
+      '<a href="' + footerUrl + '" target="_blank" rel="noopener noreferrer" class="artemis-inline-footer-link">' +
+        '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>' +
+        ' View on Artemis Analytics' +
+        '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>' +
+      '</a></div>';
 
     html += '</div>';
     return html;
   }
 
-  /* Render inline area chart for a trend card */
-  function renderInlineChart(chart) {
-    var values = chart.values;
+  /* Render inline area chart with timeframe selector */
+  function renderInlineChart(chart, artemisUrl, panelId) {
+    var allValues = chart.values;
+    var totalDays = allValues.length;
+
+    /* Determine available timeframes based on data length */
+    var timeframes = [];
+    if (totalDays >= 7)  { timeframes.push({ label: "7d",  days: 7 }); }
+    if (totalDays >= 14) { timeframes.push({ label: "14d", days: 14 }); }
+    if (totalDays >= 30) { timeframes.push({ label: "30d", days: 30 }); }
+    if (totalDays >= 60) { timeframes.push({ label: "90d", days: Math.min(totalDays, 90) }); }
+
+    /* Default to 30d or all data */
+    var defaultDays = totalDays >= 30 ? 30 : totalDays;
+    var values = allValues.slice(-defaultDays);
+
+    var chartId = panelId + "-chart";
+    var gradId = "areaGrad-" + panelId;
+    var svgHtml = buildChartSvg(values, chart.unit, gradId);
+
+    /* Latest value display */
+    var latest = allValues[allValues.length - 1];
+    var valueText = formatChartValue(latest, chart.unit);
+
+    /* Chart header — label links to Artemis */
+    var labelHtml = '<span class="artemis-inline-chart-label">' + escapeHtml(chart.label || "") + '</span>';
+    if (artemisUrl) {
+      labelHtml = '<a href="' + artemisUrl + '" target="_blank" rel="noopener noreferrer" class="artemis-inline-chart-link">' +
+        escapeHtml(chart.label || "") +
+        '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>' +
+      '</a>';
+    }
+
+    /* Timeframe toggle buttons */
+    var tfHtml = '';
+    if (timeframes.length > 1) {
+      tfHtml = '<div class="artemis-tf-toggle" data-chart-id="' + chartId + '" data-all-values="' + escapeAttr(JSON.stringify(allValues)) + '" data-unit="' + escapeAttr(chart.unit || "") + '" data-grad-id="' + gradId + '">';
+      timeframes.forEach(function (tf) {
+        var activeClass = tf.days === defaultDays ? " active" : "";
+        tfHtml += '<button class="artemis-tf-btn' + activeClass + '" data-days="' + tf.days + '">' + tf.label + '</button>';
+      });
+      tfHtml += '</div>';
+    }
+
+    return '<div class="artemis-inline-chart">' +
+      '<div class="artemis-inline-chart-header">' +
+        labelHtml +
+        '<div class="artemis-inline-chart-right">' +
+          tfHtml +
+          '<span class="artemis-inline-chart-value">' + escapeHtml(valueText) + '</span>' +
+        '</div>' +
+      '</div>' +
+      '<div class="artemis-inline-chart-wrap" id="' + chartId + '">' +
+        svgHtml +
+      '</div>' +
+    '</div>';
+  }
+
+  /* Build SVG chart markup from values */
+  function buildChartSvg(values, unit, gradId) {
     var w = 400, h = 80;
-    var padTop = 20, padBottom = 6, padLeft = 0, padRight = 0;
+    var padTop = 4, padBottom = 4, padLeft = 0, padRight = 0;
     var chartW = w - padLeft - padRight;
     var chartH = h - padTop - padBottom;
     var min = Math.min.apply(null, values);
@@ -392,34 +459,29 @@
       return x + "," + y;
     }).join(" ");
 
-    /* Area fill */
     var areaPoints = points + " " + (padLeft + chartW).toFixed(1) + "," + (padTop + chartH) + " " + padLeft + "," + (padTop + chartH);
-
-    /* Label + latest value */
     var latest = values[values.length - 1];
-    var labelText = chart.label || "";
-    var valueText = chart.unit ? latest.toFixed(1) + chart.unit.replace("$", "") : latest.toFixed(1);
-    if (chart.unit && chart.unit.charAt(0) === "$") {
-      valueText = "$" + latest.toFixed(1) + chart.unit.slice(1);
-    }
+    var lastX = (padLeft + (values.length - 1) * step).toFixed(1);
+    var lastY = (padTop + chartH - ((latest - min) / range) * chartH).toFixed(1);
 
-    return '<div class="artemis-inline-chart">' +
-      '<div class="artemis-inline-chart-header">' +
-        '<span class="artemis-inline-chart-label">' + escapeHtml(labelText) + '</span>' +
-        '<span class="artemis-inline-chart-value">' + escapeHtml(valueText) + '</span>' +
-      '</div>' +
-      '<svg class="artemis-inline-chart-svg" viewBox="0 0 ' + w + ' ' + h + '" preserveAspectRatio="none">' +
-        '<defs>' +
-          '<linearGradient id="areaGrad-' + labelText.replace(/\W/g,"") + '" x1="0" y1="0" x2="0" y2="1">' +
-            '<stop offset="0%" stop-color="var(--color-primary)" stop-opacity="0.25"/>' +
-            '<stop offset="100%" stop-color="var(--color-primary)" stop-opacity="0.02"/>' +
-          '</linearGradient>' +
-        '</defs>' +
-        '<polygon fill="url(#areaGrad-' + labelText.replace(/\W/g,"") + ')" points="' + areaPoints + '"/>' +
-        '<polyline fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="' + points + '"/>' +
-        '<circle cx="' + (padLeft + (values.length - 1) * step).toFixed(1) + '" cy="' + (padTop + chartH - ((latest - min) / range) * chartH).toFixed(1) + '" r="3" fill="var(--color-primary)" stroke="var(--color-surface)" stroke-width="1.5"/>' +
-      '</svg>' +
-    '</div>';
+    return '<svg class="artemis-inline-chart-svg" viewBox="0 0 ' + w + ' ' + h + '" preserveAspectRatio="none">' +
+      '<defs>' +
+        '<linearGradient id="' + gradId + '" x1="0" y1="0" x2="0" y2="1">' +
+          '<stop offset="0%" stop-color="var(--color-primary)" stop-opacity="0.25"/>' +
+          '<stop offset="100%" stop-color="var(--color-primary)" stop-opacity="0.02"/>' +
+        '</linearGradient>' +
+      '</defs>' +
+      '<polygon fill="url(#' + gradId + ')" points="' + areaPoints + '"/>' +
+      '<polyline fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="' + points + '"/>' +
+      '<circle cx="' + lastX + '" cy="' + lastY + '" r="3" fill="var(--color-primary)" stroke="var(--color-surface)" stroke-width="1.5"/>' +
+    '</svg>';
+  }
+
+  function formatChartValue(val, unit) {
+    if (unit && unit.charAt(0) === "$") {
+      return "$" + val.toFixed(1) + unit.slice(1);
+    }
+    return unit ? val.toFixed(1) + unit : val.toFixed(1);
   }
 
   function renderEmpty() {
@@ -476,6 +538,31 @@
   });
 
   mainEl.addEventListener("click", function (e) {
+    /* Timeframe toggle handler */
+    var tfBtn = e.target.closest(".artemis-tf-btn");
+    if (tfBtn) {
+      var toggle = tfBtn.closest(".artemis-tf-toggle");
+      if (toggle) {
+        var days = parseInt(tfBtn.getAttribute("data-days"), 10);
+        var allVals = JSON.parse(toggle.getAttribute("data-all-values"));
+        var unit = toggle.getAttribute("data-unit");
+        var gradIdAttr = toggle.getAttribute("data-grad-id");
+        var chartId = toggle.getAttribute("data-chart-id");
+        var sliced = allVals.slice(-days);
+
+        /* Update active state */
+        toggle.querySelectorAll(".artemis-tf-btn").forEach(function (b) { b.classList.remove("active"); });
+        tfBtn.classList.add("active");
+
+        /* Re-render chart SVG */
+        var wrap = document.getElementById(chartId);
+        if (wrap) {
+          wrap.innerHTML = buildChartSvg(sliced, unit, gradIdAttr);
+        }
+      }
+      return;
+    }
+
     var copyBtn = e.target.closest(".copy-btn");
     if (!copyBtn) { return; }
 

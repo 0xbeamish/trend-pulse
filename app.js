@@ -48,8 +48,8 @@
         }
       },
       tweets: [
-        "Solana DeFi TVL just crossed $15B \u2014 but the interesting part isn\u2019t the number.\n\nThe composition has shifted. Institutional stablecoin deposits are replacing memecoin collateral.\n\nSolana\u2019s \"casino\" narrative is quietly becoming an infrastructure story. $SOL",
-        "$15B TVL on Solana and the smart money isn\u2019t aping memecoins.\n\nInstitutional USDC/USDT flows into Solana money markets are accelerating. This is the rotation from speculation to infrastructure that bulls have been waiting for."
+        "solana defi tvl crossed $15B per @DefiLlama -- first time ever. but what's interesting isn't the number, it's the composition.\n\n1. institutional stablecoin deposits now dominate money market inflows\n2. memecoin collateral as a % of total tvl is declining\n3. deposit growth is coming from identifiable institutional wallets\n\nso the user base is changing, not just the capital. question is whether this sticks or rotates out next cycle (h't @CryptoHayes) $SOL",
+        "fyi solana defi tvl hit $15B (ATH per @DefiLlama). for context, it was $8B just 6 months ago -- that's nearly 2x in half a year.\n\nhere's what's different this time: deposit composition has shifted toward institutional stablecoin wallets, away from memecoin collateral. less casino, more yield-seeking.\n\nif that holds, it changes how you think about SOL's risk premium"
       ]
     },
     {
@@ -84,8 +84,8 @@
         }
       },
       tweets: [
-        "Circle\u2019s updated S-1 just dropped. The numbers:\n\n\u2022 $1.7B revenue (2025, +38% YoY)\n\u2022 USDC market cap: $48B\n\u2022 IPO pricing expected Q2 2026\n\nFirst time we\u2019ve seen stablecoin unit economics in a public filing. This is institutional signal.",
-        "The Circle IPO is the most important crypto event of 2026 that nobody\u2019s talking about.\n\nA publicly-traded stablecoin issuer gives TradFi a regulated on-ramp to crypto yield infrastructure.\n\nForget the ETF narrative \u2014 this is the real bridge."
+        "circle's updated S-1 shows $1.7B in 2025 revenue (+38% YoY) on a $48B USDC float. IPO pricing expected Q2.\n\nwhat jumps out: reserve yield is ~80% of revenue. their economics look more like a money market fund than a payments company.\n\nthe question is how the market prices a stablecoin issuer that's really a fixed-income business (h't @TheBlock__)",
+        "fyi circle just filed an updated S-1\n\n$1.7B revenue, +38% YoY. USDC market cap: $48B. dominance at 27.1% and climbing.\n\nfirst time we've seen stablecoin unit economics broken down in a public filing. reserve yield drives the business -- so it's essentially a rates play with a crypto distribution wrapper"
       ]
     },
     {
@@ -108,8 +108,8 @@
       ],
       dataSources: [],
       tweets: [
-        "PPI +0.4% vs +0.2% expected.\n10Y yield \u2192 4.52% (+12bps).\nJune cut probability: 68% \u2192 41%.\n\nTwo consecutive upside inflation surprises. The \"last mile\" of disinflation is proving stickier than markets priced.",
-        "The bond market is telling you something:\n\n10Y at 4.52% after a hot PPI print. June rate cut pricing just cratered.\n\nIf you\u2019re long risk assets on a rate-cut thesis, your timeline just got extended."
+        "february PPI came in hot: +0.4% MoM vs +0.2% expected. that's the second consecutive upside surprise on inflation.\n\nhere's what moved:\n\n1. 10Y jumped 12bps to 4.52%\n2. june cut probability cratered from 68% to 41% per CME FedWatch\n3. services inflation still the stickiest component\n\nif you're positioning around a rate-cut timeline, that timeline just got pushed back",
+        "so what's the PPI print telling us:\n\nservices inflation is still sticky. 10Y at 4.52%. june cut pricing cratered (68% \u2192 41% per CME FedWatch).\n\nfor context, back-to-back upside CPI + PPI surprises haven't happened since mid-2023. the \"last mile\" problem on disinflation is real and it's showing up in the bond market before it shows up in risk assets (h't @NickTimiraos)"
       ]
     },
     {
@@ -130,8 +130,8 @@
       ],
       dataSources: [],
       tweets: [
-        "Polymarket just hit $2B in monthly volume.\n\nNot a meme. Not a token pump. This is real price discovery for real-world events.\n\nPrediction markets are becoming the most honest information markets we have.",
-        "Prediction market volume in March:\n\u2022 Polymarket: $2B+ monthly\n\u2022 Kalshi: record regulated volume\n\u2022 Open interest: $800M+ on top 10 markets\n\nThe 2026 midterms are doing for prediction markets what 2024 did for crypto ETFs."
+        "polymarket crossed $2B in monthly volume for the first time -- that's roughly 4x where it was 6 months ago.\n\n1. $800M+ open interest on the top 10 markets\n2. midterm election contracts driving the bulk\n3. geopolitical event contracts growing fast\n\nfor context, total prediction market volume in all of 2023 was ~$3B. now a single platform is doing $2B/month. the adoption curve is steepening (h't @Polymarket)",
+        "fyi prediction market numbers for march so far:\n\n1. polymarket: $2B+ monthly volume (ATH)\n2. kalshi: record regulated volume\n3. $800M+ open interest across top 10 markets\n\nthe 2026 midterms are doing for prediction markets what the 2024 election did for polymarket specifically -- but this time kalshi is in the mix and the regulatory picture is clearer"
       ]
     },
     {
@@ -152,8 +152,8 @@
       ],
       dataSources: [],
       tweets: [
-        "Anthropic just closed a $5B round at $60B.\n\nLargest private AI raise ever. Claude enterprise adoption 3x QoQ.\n\nThe AI funding market isn\u2019t cooling off \u2014 it\u2019s concentrating at the frontier.",
-        "The AI private market in one data point:\n\nAnthropic: $60B valuation. $5B raised. Enterprise revenue tripling.\n\nPublic markets are volatile, but the frontier AI companies are raising bigger rounds at higher valuations than ever."
+        "anthropic reportedly closed a $5B Series E at $60B per @TheInformation. largest private AI raise ever.\n\nfor context:\n\n1. that's 3x their valuation from 18 months ago\n2. claude enterprise adoption tripled QoQ\n3. led by Google, Lightspeed, Spark\n\nthe frontier is concentrating into fewer, bigger players. question is how long the private market can sustain these valuations before an IPO forces price discovery",
+        "fyi the AI private market is still running hot:\n\nanthropic: $5B raised at $60B valuation. enterprise adoption 3x QoQ. that's the largest private fundraise in AI history (h't @alexeheath)\n\nwhat jumps out: the gap between frontier labs and everyone else is widening on both axes -- capital raised AND enterprise traction. at some point that gap becomes a moat"
       ]
     },
     {
@@ -174,8 +174,8 @@
       ],
       dataSources: [],
       tweets: [
-        "Sequoia just led a $200M round for Modular at $2.5B.\n\nThe VC signal is clear: AI infrastructure > AI applications.\n\nThe real money is betting on the picks and shovels, not the gold rush.",
-        "Where is top-tier VC capital going in 2026?\n\n\u2022 AI infrastructure (Modular: $2.5B)\n\u2022 AI tooling and deployment\n\u2022 NOT consumer AI apps\n\nSequoia, GV, General Catalyst \u2014 all converging on the same thesis."
+        "modular just closed $200M Series C at $2.5B, led by sequoia w/ GV and General Catalyst.\n\nthey're building the Mojo programming language + MAX platform for AI deployment. ex-Apple and Google eng team.\n\nwhat's interesting: of the top 10 AI rounds in 2026, 7 have been infrastructure/tooling, not consumer apps. that tells you where top-tier conviction is right now",
+        "sequoia led modular's $200M round at $2.5B. GV and General Catalyst also in.\n\nfor context, AI infra valuations this year:\n\n1. modular: $2.5B (tooling)\n2. anthropic: $60B (frontier lab)\n3. scale AI: $14B (data infra)\n\nthe pattern is clear -- capital is flowing to the picks-and-shovels layer. question is whether these valuations hold when the first wave of AI infra companies hits public markets"
       ]
     },
     {
@@ -197,8 +197,8 @@
       ],
       dataSources: [],
       tweets: [
-        "Stripe just launched embedded stablecoin rails.\n\nInstant cross-border settlements via USDC. Shopify and Ramp are early partners. 30+ countries.\n\nThe crypto payment thesis isn\u2019t theoretical anymore \u2014 it\u2019s in Stripe\u2019s API docs.",
-        "Forget crypto payments for consumers.\n\nThe real play was always B2B settlement rails. Stripe + USDC = instant cross-border payouts without correspondent banks.\n\nThis is what \"crypto eating fintech\" actually looks like."
+        "stripe just launched embedded USDC settlement rails for platform customers. instant cross-border payouts, no correspondent banking.\n\nshopify and ramp are early partners. 30+ countries on day one.\n\nfor context, cross-border B2B payments are a $150T+ annual market still running on 3-5 day SWIFT rails. if stripe's merchant base starts settling in stablecoins, that's a structural shift in how money moves (h't @FinancialTimes)",
+        "fyi stripe's new stablecoin product:\n\n1. embedded USDC rails via circle infrastructure\n2. instant cross-border settlement (vs 3-5 days on SWIFT)\n3. live in 30+ countries with shopify + ramp as launch partners\n\nwhat's interesting: this isn't a crypto company building payments. it's a payments company adopting crypto rails. that distinction matters for adoption curves"
       ]
     }
   ];

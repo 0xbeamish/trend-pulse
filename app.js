@@ -391,10 +391,14 @@
 
     /* Determine available timeframes based on data length */
     var timeframes = [];
-    if (totalDays >= 7)  { timeframes.push({ label: "7d",  days: 7 }); }
-    if (totalDays >= 14) { timeframes.push({ label: "14d", days: 14 }); }
-    if (totalDays >= 30) { timeframes.push({ label: "30d", days: 30 }); }
-    if (totalDays >= 60) { timeframes.push({ label: "90d", days: Math.min(totalDays, 90) }); }
+    if (totalDays >= 7)    { timeframes.push({ label: "7d",  days: 7 }); }
+    if (totalDays >= 14)   { timeframes.push({ label: "14d", days: 14 }); }
+    if (totalDays >= 30)   { timeframes.push({ label: "30d", days: 30 }); }
+    if (totalDays >= 60)   { timeframes.push({ label: "90d", days: Math.min(totalDays, 90) }); }
+    if (totalDays >= 120)  { timeframes.push({ label: "6m",  days: Math.min(totalDays, 180) }); }
+    if (totalDays >= 300)  { timeframes.push({ label: "1y",  days: Math.min(totalDays, 365) }); }
+    if (totalDays >= 700)  { timeframes.push({ label: "2y",  days: Math.min(totalDays, 730) }); }
+    if (totalDays >= 1400) { timeframes.push({ label: "5y",  days: Math.min(totalDays, 1825) }); }
 
     /* Default to 30d or all data */
     var defaultDays = totalDays >= 30 ? 30 : totalDays;
@@ -792,7 +796,7 @@
       }
       artemisState.available = true;
 
-      var start = daysAgo(30);
+      var start = daysAgo(1825); /* 5 years of data for full timeframe range */
       var end = daysAgo(0);
 
       Promise.all([

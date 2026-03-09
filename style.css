@@ -1,0 +1,784 @@
+/* Art direction: Finance intelligence dashboard → dark, precise, terminal-inspired
+   Palette: Dark-first with teal accent — Bloomberg terminal meets modern UI
+   Typography: General Sans (body) — clean geometric sans for data density
+   Density: Balanced — data-dense but not cramped */
+
+/* ========== DESIGN TOKENS ========== */
+:root {
+  /* Type scale */
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+
+  /* Spacing */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Content widths */
+  --content-narrow: 640px;
+  --content-default: 960px;
+  --content-wide: 1200px;
+
+  /* Fonts */
+  --font-body: 'General Sans', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ========== DARK MODE (DEFAULT) ========== */
+:root, [data-theme="dark"] {
+  --color-bg:             #0d0d0f;
+  --color-surface:        #141416;
+  --color-surface-2:      #1a1a1e;
+  --color-surface-offset: #111113;
+  --color-surface-offset-2: #1e1e22;
+  --color-surface-dynamic: #242428;
+  --color-divider:        #2a2a2e;
+  --color-border:         #333338;
+
+  --color-text:           #e0e0e4;
+  --color-text-muted:     #8a8a92;
+  --color-text-faint:     #55555c;
+  --color-text-inverse:   #0d0d0f;
+
+  --color-primary:        #4f98a3;
+  --color-primary-hover:  #3db8c8;
+  --color-primary-active: #2a8a96;
+  --color-primary-bg:     rgba(79, 152, 163, 0.08);
+  --color-primary-bg-hover: rgba(79, 152, 163, 0.14);
+
+  /* Sentiment */
+  --color-bullish:        #34d399;
+  --color-bullish-bg:     rgba(52, 211, 153, 0.1);
+  --color-bearish:        #f87171;
+  --color-bearish-bg:     rgba(248, 113, 113, 0.1);
+  --color-neutral-tag:    #fbbf24;
+  --color-neutral-tag-bg: rgba(251, 191, 36, 0.1);
+  --color-contested:      #a78bfa;
+  --color-contested-bg:   rgba(167, 139, 250, 0.1);
+
+  /* Domain colors */
+  --color-defi:           #4f98a3;
+  --color-defi-bg:        rgba(79, 152, 163, 0.10);
+  --color-stablecoins:    #60a5fa;
+  --color-stablecoins-bg: rgba(96, 165, 250, 0.10);
+  --color-predmarkets:    #f472b6;
+  --color-predmarkets-bg: rgba(244, 114, 182, 0.10);
+  --color-ai:             #c084fc;
+  --color-ai-bg:          rgba(192, 132, 252, 0.10);
+  --color-vc:             #fb923c;
+  --color-vc-bg:          rgba(251, 146, 60, 0.10);
+  --color-macro:          #fbbf24;
+  --color-macro-bg:       rgba(251, 191, 36, 0.10);
+  --color-fintech:        #a78bfa;
+  --color-fintech-bg:     rgba(167, 139, 250, 0.10);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.5);
+}
+
+/* ========== LIGHT MODE ========== */
+[data-theme="light"] {
+  --color-bg:             #f5f5f7;
+  --color-surface:        #ffffff;
+  --color-surface-2:      #fafafa;
+  --color-surface-offset: #eeeeef;
+  --color-surface-offset-2: #e8e8ea;
+  --color-surface-dynamic: #e0e0e3;
+  --color-divider:        #d4d4d8;
+  --color-border:         #c4c4c8;
+
+  --color-text:           #18181b;
+  --color-text-muted:     #71717a;
+  --color-text-faint:     #a1a1aa;
+  --color-text-inverse:   #fafafa;
+
+  --color-primary:        #0e7490;
+  --color-primary-hover:  #0c5e73;
+  --color-primary-active: #094a5b;
+  --color-primary-bg:     rgba(14, 116, 144, 0.06);
+  --color-primary-bg-hover: rgba(14, 116, 144, 0.12);
+
+  --color-bullish:        #059669;
+  --color-bullish-bg:     rgba(5, 150, 105, 0.08);
+  --color-bearish:        #dc2626;
+  --color-bearish-bg:     rgba(220, 38, 38, 0.08);
+  --color-neutral-tag:    #d97706;
+  --color-neutral-tag-bg: rgba(217, 119, 6, 0.08);
+  --color-contested:      #7c3aed;
+  --color-contested-bg:   rgba(124, 58, 237, 0.08);
+
+  --color-defi:           #0e7490;
+  --color-defi-bg:        rgba(14, 116, 144, 0.08);
+  --color-stablecoins:    #2563eb;
+  --color-stablecoins-bg: rgba(37, 99, 235, 0.08);
+  --color-predmarkets:    #db2777;
+  --color-predmarkets-bg: rgba(219, 39, 119, 0.08);
+  --color-ai:             #9333ea;
+  --color-ai-bg:          rgba(147, 51, 234, 0.08);
+  --color-vc:             #ea580c;
+  --color-vc-bg:          rgba(234, 88, 12, 0.08);
+  --color-macro:          #d97706;
+  --color-macro-bg:       rgba(217, 119, 6, 0.08);
+  --color-fintech:        #7c3aed;
+  --color-fintech-bg:     rgba(124, 58, 237, 0.08);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.12);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --color-bg:             #f5f5f7;
+    --color-surface:        #ffffff;
+    --color-surface-2:      #fafafa;
+    --color-surface-offset: #eeeeef;
+    --color-surface-offset-2: #e8e8ea;
+    --color-surface-dynamic: #e0e0e3;
+    --color-divider:        #d4d4d8;
+    --color-border:         #c4c4c8;
+    --color-text:           #18181b;
+    --color-text-muted:     #71717a;
+    --color-text-faint:     #a1a1aa;
+    --color-text-inverse:   #fafafa;
+    --color-primary:        #0e7490;
+    --color-primary-hover:  #0c5e73;
+    --color-primary-active: #094a5b;
+    --color-primary-bg:     rgba(14, 116, 144, 0.06);
+    --color-primary-bg-hover: rgba(14, 116, 144, 0.12);
+    --color-bullish:        #059669;
+    --color-bullish-bg:     rgba(5, 150, 105, 0.08);
+    --color-bearish:        #dc2626;
+    --color-bearish-bg:     rgba(220, 38, 38, 0.08);
+    --color-neutral-tag:    #d97706;
+    --color-neutral-tag-bg: rgba(217, 119, 6, 0.08);
+    --color-contested:      #7c3aed;
+    --color-contested-bg:   rgba(124, 58, 237, 0.08);
+    --color-defi:           #0e7490;
+    --color-defi-bg:        rgba(14, 116, 144, 0.08);
+    --color-stablecoins:    #2563eb;
+    --color-stablecoins-bg: rgba(37, 99, 235, 0.08);
+    --color-predmarkets:    #db2777;
+    --color-predmarkets-bg: rgba(219, 39, 119, 0.08);
+    --color-ai:             #9333ea;
+    --color-ai-bg:          rgba(147, 51, 234, 0.08);
+    --color-vc:             #ea580c;
+    --color-vc-bg:          rgba(234, 88, 12, 0.08);
+    --color-macro:          #d97706;
+    --color-macro-bg:       rgba(217, 119, 6, 0.08);
+    --color-fintech:        #7c3aed;
+    --color-fintech-bg:     rgba(124, 58, 237, 0.08);
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 12px 32px rgba(0,0,0,0.12);
+  }
+}
+
+/* ========== DASHBOARD LAYOUT ========== */
+html, body { height: 100%; overflow: hidden; margin: 0; }
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100dvh;
+}
+
+.sidebar {
+  grid-row: 1 / -1;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-divider);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.header {
+  grid-column: 2;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-divider);
+  padding: var(--space-3) var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  z-index: 10;
+}
+
+.main {
+  grid-column: 2;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: var(--space-6);
+}
+
+/* ========== SIDEBAR ========== */
+.sidebar-header {
+  padding: var(--space-4) var(--space-4) var(--space-3);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.logo svg { flex-shrink: 0; }
+
+.logo-text {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.logo-sub {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: 1px;
+}
+
+.sidebar-section {
+  padding: var(--space-3) var(--space-2);
+}
+
+.sidebar-section-title {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0 var(--space-2) var(--space-2);
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: 5px var(--space-2);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  background: transparent;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.filter-btn:hover {
+  background: var(--color-primary-bg-hover);
+  color: var(--color-text);
+}
+
+.filter-btn.active {
+  background: var(--color-primary-bg);
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.filter-btn .count {
+  margin-left: auto;
+  font-size: 0.6875rem;
+  color: var(--color-text-faint);
+  font-variant-numeric: tabular-nums lining-nums;
+  min-width: 16px;
+  text-align: right;
+}
+
+.filter-btn.active .count {
+  color: var(--color-primary);
+}
+
+.filter-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+.filter-btn.active .filter-icon { opacity: 1; }
+
+.sidebar-divider {
+  height: 1px;
+  background: var(--color-divider);
+  margin: var(--space-1) var(--space-2);
+}
+
+/* Sidebar bottom */
+.sidebar-footer {
+  margin-top: auto;
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--color-divider);
+}
+
+.sidebar-footer a {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  text-decoration: none;
+}
+
+.sidebar-footer a:hover { color: var(--color-text-muted); }
+
+/* ========== HEADER ========== */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.header-title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  background: var(--color-bullish-bg);
+  color: var(--color-bullish);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-bullish);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.last-updated {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+}
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+}
+
+.icon-btn:hover {
+  background: var(--color-primary-bg-hover);
+  color: var(--color-text);
+}
+
+/* ========== TREND FEED ========== */
+.trend-grid {
+  display: grid;
+  gap: var(--space-4);
+  max-width: var(--content-wide);
+}
+
+.trend-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--transition-interactive),
+              box-shadow var(--transition-interactive);
+}
+
+.trend-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.trend-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5) 0;
+  gap: var(--space-3);
+}
+
+.trend-card-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.trend-domain {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.trend-domain.defi          { background: var(--color-defi-bg);        color: var(--color-defi); }
+.trend-domain.stablecoins   { background: var(--color-stablecoins-bg); color: var(--color-stablecoins); }
+.trend-domain.predmarkets   { background: var(--color-predmarkets-bg); color: var(--color-predmarkets); }
+.trend-domain.ai            { background: var(--color-ai-bg);          color: var(--color-ai); }
+.trend-domain.vc            { background: var(--color-vc-bg);          color: var(--color-vc); }
+.trend-domain.macro         { background: var(--color-macro-bg);       color: var(--color-macro); }
+.trend-domain.fintech       { background: var(--color-fintech-bg);     color: var(--color-fintech); }
+
+.sentiment-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: 500;
+}
+
+.sentiment-tag.bullish   { background: var(--color-bullish-bg);    color: var(--color-bullish); }
+.sentiment-tag.bearish   { background: var(--color-bearish-bg);    color: var(--color-bearish); }
+.sentiment-tag.neutral   { background: var(--color-neutral-tag-bg); color: var(--color-neutral-tag); }
+.sentiment-tag.contested { background: var(--color-contested-bg);  color: var(--color-contested); }
+
+.trend-time {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.trend-card-body {
+  padding: var(--space-3) var(--space-5) var(--space-4);
+}
+
+.trend-title {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+  line-height: 1.35;
+}
+
+.trend-summary {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-3);
+}
+
+.trend-why {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  line-height: 1.6;
+  padding: var(--space-3);
+  background: var(--color-surface-2);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+
+.trend-why strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.trend-voices {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-2);
+}
+
+.voice-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-primary);
+  background: var(--color-primary-bg);
+  text-decoration: none;
+}
+
+.voice-link:hover { background: var(--color-primary-bg-hover); }
+
+.data-source-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-bullish);
+  background: var(--color-bullish-bg);
+  text-decoration: none;
+}
+
+/* Tweet drafts */
+.tweet-section {
+  border-top: 1px solid var(--color-divider);
+  padding: var(--space-3) var(--space-5) var(--space-4);
+}
+
+.tweet-section-title {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-3);
+}
+
+.tweet-draft {
+  position: relative;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  margin-bottom: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.tweet-draft:last-child { margin-bottom: 0; }
+
+.tweet-draft-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-faint);
+  margin-bottom: var(--space-2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-primary);
+  background: var(--color-primary-bg);
+}
+
+.copy-btn:hover { background: var(--color-primary-bg-hover); }
+
+.copy-btn.copied {
+  color: var(--color-bullish);
+  background: var(--color-bullish-bg);
+}
+
+.tweet-char-count {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  font-variant-numeric: tabular-nums;
+  margin-top: var(--space-1);
+}
+
+.tweet-char-count.over { color: var(--color-bearish); }
+
+/* ========== EMPTY & LOADING STATES ========== */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-16) var(--space-8);
+  text-align: center;
+}
+
+.empty-state svg {
+  margin-bottom: var(--space-4);
+  color: var(--color-text-faint);
+}
+
+.empty-state h3 {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.empty-state p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  max-width: 400px;
+}
+
+/* Skeleton loading */
+.skeleton {
+  background: linear-gradient(90deg, var(--color-surface-2) 25%, var(--color-surface-dynamic) 50%, var(--color-surface-2) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-md);
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ========== HISTORY TOGGLE ========== */
+.history-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  background: transparent;
+  white-space: nowrap;
+}
+
+.history-toggle:hover {
+  background: var(--color-primary-bg-hover);
+  color: var(--color-text);
+}
+
+.history-toggle.active {
+  background: var(--color-primary-bg);
+  color: var(--color-primary);
+}
+
+/* ========== CYCLE DIVIDER ========== */
+.cycle-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  margin: var(--space-2) 0;
+}
+
+.cycle-divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-divider);
+}
+
+.cycle-divider-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  font-weight: 500;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+  }
+
+  .sidebar {
+    grid-row: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--color-divider);
+    max-height: none;
+    overflow: visible;
+  }
+
+  .sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .sidebar-section { padding: var(--space-2) var(--space-3) var(--space-3); }
+
+  .sidebar-section-title { display: none; }
+  .sidebar-divider { display: none; }
+
+  .sidebar-filters {
+    display: flex;
+    gap: var(--space-2);
+    overflow-x: auto;
+    padding-bottom: var(--space-1);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-btn {
+    padding: var(--space-1) var(--space-3);
+    white-space: nowrap;
+    font-size: var(--text-xs);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-border);
+  }
+
+  .filter-btn.active { border-color: var(--color-primary); }
+  .filter-btn .count { display: none; }
+
+  .sidebar-footer { display: none; }
+
+  .header {
+    grid-column: 1;
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .main {
+    grid-column: 1;
+    padding: var(--space-4);
+  }
+
+  .header-title { font-size: var(--text-base); }
+
+  .mobile-hidden { display: none; }
+
+  .last-updated { max-width: 120px; }
+
+  .status-badge span:not(.status-dot) { display: none; }
+}

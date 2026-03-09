@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trend Pulse — Twitter Intelligence</title>
+<meta name="description" content="Real-time Twitter trend monitoring for DeFi, stablecoins, prediction markets, AI, VC, macro, and fintech.">
+
+<!-- Fonts -->
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="dashboard">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-label="Trend Pulse logo">
+          <rect width="32" height="32" rx="8" fill="currentColor" style="color: var(--color-primary)"/>
+          <path d="M8 22L12 14L17 18L24 8" stroke="var(--color-text-inverse)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="24" cy="8" r="2.5" fill="var(--color-text-inverse)"/>
+        </svg>
+        <div>
+          <div class="logo-text">Trend Pulse</div>
+          <div class="logo-sub">Twitter Intelligence</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Overview</div>
+      <div class="sidebar-filters" role="list">
+        <button class="filter-btn active" data-filter="all" role="listitem">
+          <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span>All Topics</span>
+          <span class="count" id="count-all">0</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Crypto</div>
+      <div class="sidebar-filters" role="list">
+        <button class="filter-btn" data-filter="defi" role="listitem">
+          <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <span>DeFi</span>
+          <span class="count" id="count-defi">0</span>
+        </button>
+        <button class="filter-btn" data-filter="stablecoins" role="listitem">
+          <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12h6M9 9h6M9 15h6"/></svg>
+          <span>Stablecoins</span>
+          <span class="count" id="count-stablecoins">0</span>
+        </button>
+        <button class="filter-btn" data-filter="predmarkets" role="listitem">
+          <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          <span>Prediction Mkts</span>
+          <span class="count" id="count-predmarkets">0</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Tech &amp; Capital</div>
+      <div class="sidebar-filters" role="list">
+        <button class="filter-btn" data-filter="ai" role="listitem">
+          <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><path d="M8 14v1a4 4 0 0 0 8 0v-1"/><path d="M12 18v4M8 22h8"/></svg>
+          <span>AI</span>
+          <span class="count" id="count-ai">0</span>
+        </button>
+        <button class="filter-btn" data-filter="vc" role="listitem">
+          <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><path d="M9 20v-4h6v4"/></svg>
+          <span>VC</span>
+          <span class="count" id="count-vc">0</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Markets</div>
+      <div class="sidebar-filters" role="list">
+        <button class="filter-btn" data-filter="macro" role="listitem">
+          <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-8 4 4 5-8"/></svg>
+          <span>Macro</span>
+          <span class="count" id="count-macro">0</span>
+        </button>
+        <button class="filter-btn" data-filter="fintech" role="listitem">
+          <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+          <span>Fintech</span>
+          <span class="count" id="count-fintech">0</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+    </div>
+  </aside>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-left">
+      <h1 class="header-title" id="header-title">Latest Trends</h1>
+    </div>
+    <div class="header-right">
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <span>Monitoring</span>
+      </div>
+      <span class="last-updated" id="last-updated">Updated just now</span>
+      <button class="history-toggle" id="history-toggle" aria-label="Toggle trend history">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span class="mobile-hidden">History</span>
+      </button>
+      <button class="icon-btn" data-theme-toggle aria-label="Toggle theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main" id="main-content">
+    <!-- Content injected by JS -->
+  </main>
+</div>
+
+<script src="./app.js"></script>
+</body>
+</html>

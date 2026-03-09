@@ -50,3 +50,4 @@ The JSON schema:
 ## License
 
 MIT
+

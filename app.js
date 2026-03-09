@@ -28,6 +28,11 @@
         { handle: "@DefiLlama", url: "https://x.com/DefiLlama" },
         { handle: "@CryptoHayes", url: "https://x.com/CryptoHayes" }
       ],
+      sources: [
+        { label: "DefiLlama — Solana TVL", url: "https://defillama.com/chain/Solana" },
+        { label: "Artemis — Solana Dashboard", url: "https://app.artemisanalytics.com/asset/solana" },
+        { label: "@DefiLlama on X", url: "https://x.com/DefiLlama" }
+      ],
       dataSources: ["Artemis TVL Dashboard"],
       artemisData: {
         url: "https://app.artemisanalytics.com/asset/solana",
@@ -58,6 +63,11 @@
       voices: [
         { handle: "@TheBlock__", url: "https://x.com/TheBlock__" },
         { handle: "@tier10k", url: "https://x.com/tier10k" }
+      ],
+      sources: [
+        { label: "SEC EDGAR — Circle S-1 Filing", url: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=circle&CIK=&type=S-1" },
+        { label: "The Block — Circle IPO Coverage", url: "https://www.theblock.co" },
+        { label: "Artemis — Stablecoin Dashboard", url: "https://app.artemisanalytics.com/stablecoins" }
       ],
       dataSources: ["Artemis Stablecoin Dashboard"],
       artemisData: {
@@ -91,6 +101,11 @@
         { handle: "@MacroAlf", url: "https://x.com/MacroAlf" },
         { handle: "@zerohedge", url: "https://x.com/zerohedge" }
       ],
+      sources: [
+        { label: "BLS — Producer Price Index", url: "https://www.bls.gov/ppi/" },
+        { label: "CME FedWatch Tool", url: "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html" },
+        { label: "@NickTimiraos on X", url: "https://x.com/NickTimiraos" }
+      ],
       dataSources: [],
       tweets: [
         "PPI +0.4% vs +0.2% expected.\n10Y yield \u2192 4.52% (+12bps).\nJune cut probability: 68% \u2192 41%.\n\nTwo consecutive upside inflation surprises. The \"last mile\" of disinflation is proving stickier than markets priced.",
@@ -108,6 +123,10 @@
       voices: [
         { handle: "@Polymarket", url: "https://x.com/Polymarket" },
         { handle: "@unusual_whales", url: "https://x.com/unusual_whales" }
+      ],
+      sources: [
+        { label: "Polymarket — Markets", url: "https://polymarket.com" },
+        { label: "@Polymarket on X", url: "https://x.com/Polymarket" }
       ],
       dataSources: [],
       tweets: [
@@ -127,6 +146,10 @@
         { handle: "@TheInformation", url: "https://x.com/TheInformation" },
         { handle: "@alexeheath", url: "https://x.com/alexeheath" }
       ],
+      sources: [
+        { label: "The Information — Anthropic Fundraise", url: "https://www.theinformation.com" },
+        { label: "@alexeheath on X", url: "https://x.com/alexeheath" }
+      ],
       dataSources: [],
       tweets: [
         "Anthropic just closed a $5B round at $60B.\n\nLargest private AI raise ever. Claude enterprise adoption 3x QoQ.\n\nThe AI funding market isn\u2019t cooling off \u2014 it\u2019s concentrating at the frontier.",
@@ -145,6 +168,10 @@
         { handle: "@sequoia", url: "https://x.com/sequoia" },
         { handle: "@tecaborisenko", url: "https://x.com/tecaborisenko" }
       ],
+      sources: [
+        { label: "TechCrunch — Modular Series C", url: "https://techcrunch.com" },
+        { label: "PitchBook — Modular Profile", url: "https://pitchbook.com" }
+      ],
       dataSources: [],
       tweets: [
         "Sequoia just led a $200M round for Modular at $2.5B.\n\nThe VC signal is clear: AI infrastructure > AI applications.\n\nThe real money is betting on the picks and shovels, not the gold rush.",
@@ -162,6 +189,11 @@
       voices: [
         { handle: "@FinancialTimes", url: "https://x.com/FinancialTimes" },
         { handle: "@a16z", url: "https://x.com/a16z" }
+      ],
+      sources: [
+        { label: "Stripe Blog — Stablecoin Rails", url: "https://stripe.com/blog" },
+        { label: "@FinancialTimes on X", url: "https://x.com/FinancialTimes" },
+        { label: "Circle — USDC Partners", url: "https://www.circle.com/en/usdc" }
       ],
       dataSources: [],
       tweets: [
@@ -316,6 +348,7 @@
             return '<a class="voice-link" href="' + v.url + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(v.handle) + '</a>';
           }).join("") +
         '</div>' +
+        renderSourcesSection(trend.sources) +
       '</div>' +
       '<div class="tweet-section">' +
         '<div class="tweet-section-title">Tweet Drafts</div>' +
@@ -336,6 +369,25 @@
         }).join("") +
       '</div>' +
     '</article>';
+  }
+
+  /* ========== SOURCES SECTION ========== */
+  function renderSourcesSection(sources) {
+    if (!sources || sources.length === 0) { return ""; }
+    return '<div class="trend-sources">' +
+      '<div class="trend-sources-title">' +
+        '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>' +
+        'Sources' +
+      '</div>' +
+      '<div class="trend-sources-list">' +
+        sources.map(function (s) {
+          return '<a class="trend-source-link" href="' + escapeAttr(s.url) + '" target="_blank" rel="noopener noreferrer">' +
+            escapeHtml(s.label) +
+            '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>' +
+          '</a>';
+        }).join("") +
+      '</div>' +
+    '</div>';
   }
 
   /* ========== INLINE CHART ID COUNTER ========== */

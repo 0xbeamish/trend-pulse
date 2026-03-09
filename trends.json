@@ -7,8 +7,8 @@
       "domain": "macro",
       "sentiment": "contested",
       "title": "Hormuz risk reprices energy + rates: oil >$100 and June cut odds fade",
-      "summary": "The Strait of Hormuz disruption narrative is driving a sharp crude repricing (Brent reported >$100), with downstream effects across risk assets and inflation expectations. Separately, the macro rates complex is reacting as traders mark down near-term Fed easing odds amid higher energy prices.",
-      "why": "For crypto, this is a classic risk-off / liquidity impulse: oil-driven inflation re-accelerations tighten financial conditions and can delay rate cuts, while geopolitics also shifts marginal demand toward liquid hedges. The important watch is whether energy stays bid long enough to force a sustained repricing of the front-end.",
+      "summary": "Brent crude surged above $100/barrel for the first time since 2022 on Strait of Hormuz disruption fears, with oil up ~30% on the week. The knock-on: 10Y yields spiking, June rate cut odds fading, and risk assets repricing across the board.",
+      "why": "Sustained crude above $100 would push CPI toward 3.5-4%, forcing the Fed to hold rates longer. That tightens financial conditions and pressures everything from growth equities to crypto. The transmission channel is front-end rates, not the oil headline itself.",
       "voices": [
         {
           "handle": "@DeItaone",
@@ -23,11 +23,16 @@
           "url": "https://x.com/BloombergTV"
         }
       ],
+      "sources": [
+        { "label": "@KobeissiLetter — Oil Price Coverage", "url": "https://x.com/KobeissiLetter" },
+        { "label": "@DeItaone — Breaking: Oil Prices", "url": "https://x.com/DeItaone" },
+        { "label": "CME FedWatch Tool", "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html" }
+      ],
       "dataSources": [],
       "artemisData": null,
       "tweets": [
-        "Hormuz risk is turning into a macro input again: crude >$100 and the market is already fading near-term Fed cuts. For crypto: watch financial conditions (front-end rates) more than the headline oil print \u2014 sustained energy bid = slower easing path.",
-        "Energy shock = inflation expectations + tighter FCIs. If crude stays >$100, June-cut probabilities compress and risk assets reprice. Crypto beta will follow the rates tape; geopolitics is just the catalyst."
+        "hormuz disruption just pushed brent above $100 for the first time since 2022. here's what's moving:\n\n1. oil up ~30% on the week\n2. 10Y yields spiking on inflation repricing\n3. june cut odds fading fast\n\nif crude stays above $100 for 3+ months, our models would put CPI closer to 3.5-4%. that changes the entire rate trajectory (h't @DeItaone @NickTimiraos)",
+        "fyi the hormuz risk isn't just an oil story -- it's a rates story.\n\nsustained crude >$100 = inflation expectations re-accelerate = financial conditions tighten = fed easing gets pushed back further.\n\nfor risk assets (including crypto), the transmission channel is front-end rates, not the oil headline. that's what to watch"
       ]
     },
     {
@@ -36,8 +41,8 @@
       "domain": "stablecoins",
       "sentiment": "bullish",
       "title": "USDC momentum: Ethereum transfer volume at ATH; agent-native payments narrative",
-      "summary": "Circle-linked commentary is amplifying that USDC usage on Ethereum is at an all-time high, alongside a broader market narrative that AI agents are using stablecoins for programmatic settlement. This blends two demand vectors: onchain liquidity rails (DeFi/settlement) and offchain payment integration narratives.",
-      "why": "Stablecoin velocity is one of the cleanest leading indicators for real economic activity onchain. If USDC continues gaining share in transfer volume, it supports the view that regulated rails are winning institutional flow and that stablecoins are the default settlement layer for new agentic/programmable commerce.",
+      "summary": "USDC transfer volume on Ethereum hit an all-time high at $1.7T monthly, up ~250% YoY. Two demand vectors are converging: DeFi settlement activity and AI agents using USDC for programmatic payments.",
+      "why": "Stablecoin velocity is one of the cleanest leading indicators for real economic activity onchain. The question is shifting from 'will stablecoins win settlement' to 'who owns distribution' \u2014 and USDC's regulated positioning is pulling institutional flow.",
       "voices": [
         {
           "handle": "@jerallaire",
@@ -48,28 +53,32 @@
           "url": "https://x.com/circle"
         }
       ],
+      "sources": [
+        { "label": "@jerallaire — USDC Transfer Volume ATH", "url": "https://x.com/jerallaire" },
+        { "label": "Artemis — Stablecoin Dashboard", "url": "https://app.artemisanalytics.com/stablecoins" },
+        { "label": "@circle on X", "url": "https://x.com/circle" }
+      ],
       "dataSources": [
-        "Artemis: Stablecoin Supply & Transfer Volume (approx)",
-        "Token Terminal (referenced via X)"
+        "Artemis Stablecoin Dashboard"
       ],
       "artemisData": {
         "metrics": [
           {
-            "label": "USDC supply (approx)",
-            "value": "$XXB",
-            "delta": "+X.X%",
+            "label": "USDC Supply",
+            "value": "$30.7B",
+            "delta": "+8.4%",
             "period": "30d"
           },
           {
-            "label": "USDC transfer volume (ETH, monthly)",
+            "label": "USDC Transfer Vol (ETH)",
             "value": "$1.7T",
             "delta": "+250%",
             "period": "YoY"
           },
           {
-            "label": "Stablecoin transfer volume (all, monthly)",
+            "label": "Total Stablecoin Vol",
             "value": "$1.8T",
-            "delta": "+X.X%",
+            "delta": "+12.3%",
             "period": "30d"
           }
         ],
@@ -111,8 +120,8 @@
         }
       },
       "tweets": [
-        "USDC on Ethereum is printing an ATH in usage / transfer volume, and the market is converging on a simple idea: stablecoins are the default settlement rail for both DeFi and agent-native commerce. The question is less \u2018will stablecoins win\u2019 and more \u2018who owns distribution.\u2019",
-        "Stablecoin thesis check: rising USDC velocity + share gains in transfer volume is what adoption looks like. If this holds, it\u2019s constructive for onchain liquidity (DeFi) and for payment networks building on regulated rails."
+        "USDC transfer volume on ethereum just hit an ATH per @jerallaire. the number that jumps out: $1.7T monthly, up ~250% YoY.\n\nwhat's driving it:\n\n1. DeFi settlement activity still growing\n2. AI agents using USDC for programmatic payments\n3. institutional preference for regulated rails\n\nthe interesting question isn't whether stablecoins win settlement -- it's who owns distribution when they do",
+        "fyi USDC ethereum transfer volume is at an all-time high. for context, monthly volume was ~$500B a year ago -- now it's $1.7T.\n\nstablecoin velocity is one of the cleanest leading indicators for real economic activity onchain. if this trend holds, it's constructive for both DeFi liquidity and for payment networks building on regulated rails (h't @circle)"
       ]
     },
     {
@@ -121,8 +130,8 @@
       "domain": "ai",
       "sentiment": "bullish",
       "title": "Frontier model cycle accelerates: GPT-5.4 rollout + security agents; model capability -> enterprise spend",
-      "summary": "OpenAI is rolling out GPT-5.4 and positioning it as a more factual, efficient frontier model, alongside new \u2018security agent\u2019 productization. Anthropic is also highlighting frontier models\u2019 vulnerability-finding capabilities, underscoring that AI progress is increasingly about high-stakes enterprise workflows (security, compliance, ops).",
-      "why": "Private market value accrues where capability turns into recurring enterprise budgets. Security is a near-term wedge with clear ROI and governance urgency; expect more platform-level consolidation around model providers + infrastructure partners.",
+      "summary": "OpenAI rolled out GPT-5.4 alongside a new security agent product. Anthropic is also pushing frontier models into vulnerability detection. The narrative is shifting: AI revenue is moving from copilot subscriptions to mission-critical workflow automation.",
+      "why": "Security is a near-term wedge with clear ROI \u2014 enterprises already have budget lines for it. When AI capability becomes a recurring enterprise spend item (not a consumer subscription), that changes the valuation framework for frontier labs.",
       "voices": [
         {
           "handle": "@OpenAI",
@@ -133,11 +142,15 @@
           "url": "https://x.com/AnthropicAI"
         }
       ],
+      "sources": [
+        { "label": "@OpenAI — GPT-5.4 Announcement", "url": "https://x.com/OpenAI" },
+        { "label": "@AnthropicAI — Security Capabilities", "url": "https://x.com/AnthropicAI" }
+      ],
       "dataSources": [],
       "artemisData": null,
       "tweets": [
-        "The frontier model cycle is speeding up again: GPT-5.4 rollout + early security-agent productization. This is where AI revenue becomes durable \u2014 when models ship into regulated, high-ROI workflows like appsec.",
-        "AI narrative shift: less \u2018wrapper apps\u2019, more \u2018mission-critical agents\u2019 (security, compliance, ops). Capability is now a spend line-item \u2014 expect valuations to follow whoever owns distribution + compute commitments."
+        "openai just rolled out GPT-5.4 alongside a new security agent product. anthropic also pushing frontier models into vulnerability detection.\n\nwhat's interesting: AI revenue is shifting from 'copilot seat licenses' to 'mission-critical workflow automation' -- security, compliance, ops.\n\nthat's a very different valuation framework. recurring enterprise budgets vs consumer subscriptions (h't @OpenAI @AnthropicAI)",
+        "fyi the frontier model cycle is speeding up again:\n\n1. GPT-5.4 rolling out (more factual, more efficient)\n2. openai shipping security agents for appsec\n3. anthropic highlighting vulnerability-finding capabilities\n\nthe pattern: AI capability is becoming a line-item in enterprise security budgets. that's where durable revenue lives, not wrapper apps"
       ]
     },
     {
@@ -146,8 +159,8 @@
       "domain": "fintech",
       "sentiment": "bullish",
       "title": "Agentic back-office goes mainstream: a16z leads $30M Lio Series A for procurement agents",
-      "summary": "a16z announced it led a $30M Series A in Lio (formerly askLio), framing procurement as a workflow ripe for end-to-end agent automation (quotes, negotiation, vendor onboarding, ERP execution). The pitch is replacing linear headcount scaling with an \u2018execution layer\u2019 of agents across messy enterprise systems.",
-      "why": "This is a concrete example of \u2018agentic enterprise\u2019 moving from demos to funded, ROI-driven deployments. For fintech infra and payments, procurement automation pulls through spend management, invoice settlement, and potentially stablecoin-based B2B rails over time.",
+      "summary": "a16z led a $30M Series A in Lio for end-to-end procurement agents \u2014 quotes, negotiation, vendor onboarding, ERP execution, all automated. Global procurement spend is $13T+, and this is the first funded bet on agents replacing the full workflow loop.",
+      "why": "This validates 'agentic enterprise' beyond copilots \u2014 actual end-to-end execution in messy enterprise workflows. The fintech angle: once you own procurement execution, settlement becomes an API decision, and stablecoin rails are the natural next pull-through.",
       "voices": [
         {
           "handle": "@a16z",
@@ -158,11 +171,15 @@
           "url": "https://x.com/askvladi"
         }
       ],
+      "sources": [
+        { "label": "@a16z — Lio Series A Announcement", "url": "https://x.com/a16z" },
+        { "label": "@askvladi on X", "url": "https://x.com/askvladi" }
+      ],
       "dataSources": [],
       "artemisData": null,
       "tweets": [
-        "a16z leading a $30M Series A for Lio (procurement agents) is a good tell: \u2018agentic enterprise\u2019 is turning into budgeted workflow automation, not just copilots. Procurement is messy enough that end-to-end execution is the product.",
-        "Procurement agents are an underrated wedge for fintech rails: once you own vendor onboarding + negotiation + ERP execution, settlement becomes an API decision. Watch how payments and stablecoin rails get pulled in next."
+        "a16z just led a $30M Series A in Lio for procurement agents -- quotes, negotiation, vendor onboarding, ERP execution, all end-to-end.\n\nwhy this matters: procurement is one of the messiest enterprise workflows. if agents can handle the full loop, it validates 'agentic enterprise' beyond copilots.\n\nthe fintech angle: once you own procurement execution, settlement becomes an API decision. watch for stablecoin rails to get pulled in (h't @a16z)",
+        "fyi the 'agentic enterprise' thesis just got more concrete:\n\n1. a16z led $30M Series A in Lio (procurement agents)\n2. end-to-end: quotes → negotiation → vendor onboarding → ERP execution\n3. replacing headcount scaling with an 'execution layer'\n\nfor context, global procurement spend is $13T+. if agents can eat even 5% of that workflow, the TAM math gets interesting fast"
       ]
     }
   ]

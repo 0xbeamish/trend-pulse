@@ -29,6 +29,18 @@
         { handle: "@CryptoHayes", url: "https://x.com/CryptoHayes" }
       ],
       dataSources: ["Artemis TVL Dashboard"],
+      artemisData: {
+        metrics: [
+          { label: "Solana TVL", value: "$15.2B", delta: "+8.4%", period: "7d" },
+          { label: "USDC Inflows", value: "$2.1B", delta: "+23.7%", period: "7d" },
+          { label: "DeFi Protocols", value: "127", delta: "+12", period: "30d" }
+        ],
+        chart: {
+          label: "Solana DeFi TVL (30d)",
+          values: [9.8, 10.1, 10.4, 10.2, 10.6, 10.9, 11.1, 11.0, 11.3, 11.5, 11.4, 11.8, 12.0, 12.3, 12.1, 12.5, 12.7, 12.9, 13.1, 13.4, 13.6, 13.8, 14.0, 14.2, 14.5, 14.3, 14.6, 14.8, 15.0, 15.2],
+          unit: "$B"
+        }
+      },
       tweets: [
         "Solana DeFi TVL just crossed $15B \u2014 but the interesting part isn\u2019t the number.\n\nThe composition has shifted. Institutional stablecoin deposits are replacing memecoin collateral.\n\nSolana\u2019s \"casino\" narrative is quietly becoming an infrastructure story. $SOL",
         "$15B TVL on Solana and the smart money isn\u2019t aping memecoins.\n\nInstitutional USDC/USDT flows into Solana money markets are accelerating. This is the rotation from speculation to infrastructure that bulls have been waiting for."
@@ -47,6 +59,18 @@
         { handle: "@tier10k", url: "https://x.com/tier10k" }
       ],
       dataSources: ["Artemis Stablecoin Dashboard"],
+      artemisData: {
+        metrics: [
+          { label: "USDC Supply", value: "$48.3B", delta: "+5.2%", period: "30d" },
+          { label: "Total Stablecoin Supply", value: "$178B", delta: "+3.1%", period: "30d" },
+          { label: "USDC Dominance", value: "27.1%", delta: "+0.8%", period: "30d" }
+        ],
+        chart: {
+          label: "USDC Market Cap (30d)",
+          values: [42.1, 42.5, 42.8, 43.0, 43.2, 43.5, 43.8, 44.0, 44.3, 44.5, 44.8, 45.0, 45.2, 45.5, 45.8, 46.0, 46.2, 46.4, 46.6, 46.8, 47.0, 47.1, 47.3, 47.5, 47.6, 47.8, 48.0, 48.1, 48.2, 48.3],
+          unit: "$B"
+        }
+      },
       tweets: [
         "Circle\u2019s updated S-1 just dropped. The numbers:\n\n\u2022 $1.7B revenue (2025, +38% YoY)\n\u2022 USDC market cap: $48B\n\u2022 IPO pricing expected Q2 2026\n\nFirst time we\u2019ve seen stablecoin unit economics in a public filing. This is institutional signal.",
         "The Circle IPO is the most important crypto event of 2026 that nobody\u2019s talking about.\n\nA publicly-traded stablecoin issuer gives TradFi a regulated on-ramp to crypto yield infrastructure.\n\nForget the ETF narrative \u2014 this is the real bridge."
@@ -265,6 +289,12 @@
       }).join("");
     }
 
+    /* Artemis inline data panel */
+    var artemisHtml = "";
+    if (trend.artemisData) {
+      artemisHtml = renderArtemisInlinePanel(trend.artemisData);
+    }
+
     return '<article class="trend-card" data-domain="' + trend.domain + '">' +
       '<div class="trend-card-header">' +
         '<div class="trend-card-meta">' +
@@ -276,6 +306,7 @@
       '</div>' +
       '<div class="trend-card-body">' +
         '<h3 class="trend-title">' + escapeHtml(trend.title) + '</h3>' +
+        artemisHtml +
         '<p class="trend-summary">' + escapeHtml(trend.summary) + '</p>' +
         '<div class="trend-why"><strong>Why it matters:</strong> ' + escapeHtml(trend.why) + '</div>' +
         '<div class="trend-voices">' +
@@ -303,6 +334,92 @@
         }).join("") +
       '</div>' +
     '</article>';
+  }
+
+  /* Render inline Artemis data panel for a trend card */
+  function renderArtemisInlinePanel(data) {
+    var html = '<div class="artemis-inline-panel">';
+
+    /* Chart */
+    if (data.chart && data.chart.values && data.chart.values.length > 1) {
+      html += renderInlineChart(data.chart);
+    }
+
+    /* Metric pills */
+    if (data.metrics && data.metrics.length > 0) {
+      html += '<div class="artemis-inline-metrics">';
+      html += data.metrics.map(function (m) {
+        var deltaStr = m.delta || "";
+        var isPositive = deltaStr.charAt(0) === "+";
+        var isNegative = deltaStr.charAt(0) === "-";
+        var deltaClass = isPositive ? "positive" : (isNegative ? "negative" : "flat");
+        var periodStr = m.period ? ' <span class="metric-period">' + m.period + '</span>' : '';
+        return '<div class="artemis-inline-metric">' +
+          '<div class="artemis-inline-metric-label">' + escapeHtml(m.label) + '</div>' +
+          '<div class="artemis-inline-metric-row">' +
+            '<span class="artemis-inline-metric-value">' + escapeHtml(m.value) + '</span>' +
+            (deltaStr ? '<span class="artemis-inline-metric-delta ' + deltaClass + '">' + escapeHtml(deltaStr) + periodStr + '</span>' : '') +
+          '</div>' +
+        '</div>';
+      }).join("");
+      html += '</div>';
+    }
+
+    /* Powered by badge */
+    html += '<div class="artemis-inline-footer">' +
+      '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>' +
+      ' Data via Artemis Analytics</div>';
+
+    html += '</div>';
+    return html;
+  }
+
+  /* Render inline area chart for a trend card */
+  function renderInlineChart(chart) {
+    var values = chart.values;
+    var w = 400, h = 80;
+    var padTop = 20, padBottom = 6, padLeft = 0, padRight = 0;
+    var chartW = w - padLeft - padRight;
+    var chartH = h - padTop - padBottom;
+    var min = Math.min.apply(null, values);
+    var max = Math.max.apply(null, values);
+    var range = max - min || 1;
+    var step = chartW / (values.length - 1);
+
+    var points = values.map(function (v, i) {
+      var x = (padLeft + i * step).toFixed(1);
+      var y = (padTop + chartH - ((v - min) / range) * chartH).toFixed(1);
+      return x + "," + y;
+    }).join(" ");
+
+    /* Area fill */
+    var areaPoints = points + " " + (padLeft + chartW).toFixed(1) + "," + (padTop + chartH) + " " + padLeft + "," + (padTop + chartH);
+
+    /* Label + latest value */
+    var latest = values[values.length - 1];
+    var labelText = chart.label || "";
+    var valueText = chart.unit ? latest.toFixed(1) + chart.unit.replace("$", "") : latest.toFixed(1);
+    if (chart.unit && chart.unit.charAt(0) === "$") {
+      valueText = "$" + latest.toFixed(1) + chart.unit.slice(1);
+    }
+
+    return '<div class="artemis-inline-chart">' +
+      '<div class="artemis-inline-chart-header">' +
+        '<span class="artemis-inline-chart-label">' + escapeHtml(labelText) + '</span>' +
+        '<span class="artemis-inline-chart-value">' + escapeHtml(valueText) + '</span>' +
+      '</div>' +
+      '<svg class="artemis-inline-chart-svg" viewBox="0 0 ' + w + ' ' + h + '" preserveAspectRatio="none">' +
+        '<defs>' +
+          '<linearGradient id="areaGrad-' + labelText.replace(/\W/g,"") + '" x1="0" y1="0" x2="0" y2="1">' +
+            '<stop offset="0%" stop-color="var(--color-primary)" stop-opacity="0.25"/>' +
+            '<stop offset="100%" stop-color="var(--color-primary)" stop-opacity="0.02"/>' +
+          '</linearGradient>' +
+        '</defs>' +
+        '<polygon fill="url(#areaGrad-' + labelText.replace(/\W/g,"") + ')" points="' + areaPoints + '"/>' +
+        '<polyline fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="' + points + '"/>' +
+        '<circle cx="' + (padLeft + (values.length - 1) * step).toFixed(1) + '" cy="' + (padTop + chartH - ((latest - min) / range) * chartH).toFixed(1) + '" r="3" fill="var(--color-primary)" stroke="var(--color-surface)" stroke-width="1.5"/>' +
+      '</svg>' +
+    '</div>';
   }
 
   function renderEmpty() {

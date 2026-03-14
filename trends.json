@@ -1,185 +1,94 @@
 {
-  "updated": "2026-03-09T15:09:17.432495Z",
+  "updated": "2026-03-14T07:05:00Z",
   "trends": [
     {
-      "id": "macro-323dcd8018",
-      "cycle": "2026-03-09T14:00:00Z",
+      "id": "macro-20260314-timiraos-intermeeting-cut-chatter",
+      "cycle": "2026-03-14T04:58:00Z",
       "domain": "macro",
       "sentiment": "contested",
-      "title": "Hormuz risk reprices energy + rates: oil >$100 and June cut odds fade",
-      "summary": "Brent crude surged above $100/barrel for the first time since 2022 on Strait of Hormuz disruption fears, with oil up ~30% on the week. The knock-on: 10Y yields spiking, June rate cut odds fading, and risk assets repricing across the board.",
-      "why": "Sustained crude above $100 would push CPI toward 3.5-4%, forcing the Fed to hold rates longer. That tightens financial conditions and pressures everything from growth equities to crypto. The transmission channel is front-end rates, not the oil headline itself.",
+      "title": "White House Floating Rare Intermeeting Fed Cut — Last One Was March 2020",
+      "summary": "Nick Timiraos flagged that the president is pushing for a rare intermeeting Fed rate cut, with the last such move on March 15, 2020 during the COVID shock. The next scheduled decision is in ~5 business days and markets expect a hold.",
+      "why": "Intermeeting cuts are reserved for acute market stress — even the rhetoric can move rate vol and front-end yields. The question is whether this stays political noise or starts shifting the reaction function.",
       "voices": [
-        {
-          "handle": "@DeItaone",
-          "url": "https://x.com/DeItaone"
-        },
-        {
-          "handle": "@NickTimiraos",
-          "url": "https://x.com/NickTimiraos"
-        },
-        {
-          "handle": "@BloombergTV",
-          "url": "https://x.com/BloombergTV"
-        }
+        { "handle": "@NickTimiraos", "url": "https://x.com/NickTimiraos" }
       ],
       "sources": [
-        { "label": "@KobeissiLetter — Oil Price Coverage", "url": "https://x.com/KobeissiLetter" },
-        { "label": "@DeItaone — Breaking: Oil Prices", "url": "https://x.com/DeItaone" },
-        { "label": "CME FedWatch Tool", "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html" }
+        { "label": "Nick Timiraos — Intermeeting Cut Mention", "url": "https://x.com/NickTimiraos/status/2032176175208894732" },
+        { "label": "Nick Timiraos — June Cut Expectations ~40%", "url": "https://x.com/NickTimiraos/status/2031005684276298046" }
       ],
       "dataSources": [],
       "artemisData": null,
       "tweets": [
-        "hormuz disruption just pushed brent above $100 for the first time since 2022. here's what's moving:\n\n1. oil up ~30% on the week\n2. 10Y yields spiking on inflation repricing\n3. june cut odds fading fast\n\nif crude stays above $100 for 3+ months, our models would put CPI closer to 3.5-4%. that changes the entire rate trajectory (h't @DeItaone @NickTimiraos)",
-        "fyi the hormuz risk isn't just an oil story -- it's a rates story.\n\nsustained crude >$100 = inflation expectations re-accelerate = financial conditions tighten = fed easing gets pushed back further.\n\nfor risk assets (including crypto), the transmission channel is front-end rates, not the oil headline. that's what to watch"
+        "the white house is now floating an intermeeting fed cut.\n\nfor context, the last one was march 15, 2020 -- a stress regime tool.\n\n1. next scheduled decision is in ~5 business days\n2. markets currently pricing 'no change'\n3. even talking about it can move rate vol + 2Y yields\n\nwhat would have to break for the fed to actually go early? (h't @NickTimiraos)",
+        "fyi timiraos is flagging intermeeting cut chatter out of the white house. last one was mar 2020.\n\nmaybe it's just politics. but if front-end yields + rate vol start moving on it, that's your tell (per @NickTimiraos)"
       ]
     },
     {
-      "id": "stablecoins-30a2565da3",
-      "cycle": "2026-03-09T14:00:00Z",
-      "domain": "stablecoins",
-      "sentiment": "bullish",
-      "title": "USDC momentum: Ethereum transfer volume at ATH; agent-native payments narrative",
-      "summary": "USDC transfer volume on Ethereum hit an all-time high at $1.7T monthly, up ~250% YoY. Two demand vectors are converging: DeFi settlement activity and AI agents using USDC for programmatic payments.",
-      "why": "Stablecoin velocity is one of the cleanest leading indicators for real economic activity onchain. The question is shifting from 'will stablecoins win settlement' to 'who owns distribution' \u2014 and USDC's regulated positioning is pulling institutional flow.",
-      "voices": [
-        {
-          "handle": "@jerallaire",
-          "url": "https://x.com/jerallaire"
-        },
-        {
-          "handle": "@circle",
-          "url": "https://x.com/circle"
-        }
-      ],
-      "sources": [
-        { "label": "@jerallaire — USDC Transfer Volume ATH", "url": "https://x.com/jerallaire" },
-        { "label": "Artemis — Stablecoin Dashboard", "url": "https://app.artemisanalytics.com/stablecoins" },
-        { "label": "@circle on X", "url": "https://x.com/circle" }
-      ],
-      "dataSources": [
-        "Artemis Stablecoin Dashboard"
-      ],
-      "artemisData": {
-        "metrics": [
-          {
-            "label": "USDC Supply",
-            "value": "$30.7B",
-            "delta": "+8.4%",
-            "period": "30d"
-          },
-          {
-            "label": "USDC Transfer Vol (ETH)",
-            "value": "$1.7T",
-            "delta": "+250%",
-            "period": "YoY"
-          },
-          {
-            "label": "Total Stablecoin Vol",
-            "value": "$1.8T",
-            "delta": "+12.3%",
-            "period": "30d"
-          }
-        ],
-        "chart": {
-          "label": "USDC supply trend (30d, approx)",
-          "values": [
-            28.31,
-            27.821,
-            27.894,
-            27.767,
-            28.588,
-            28.638,
-            28.565,
-            28.26,
-            29.032,
-            28.753,
-            29.184,
-            28.955,
-            29.004,
-            29.297,
-            29.218,
-            29.705,
-            29.401,
-            29.421,
-            29.715,
-            29.426,
-            29.401,
-            30.077,
-            30.392,
-            30.296,
-            30.287,
-            30.024,
-            29.759,
-            30.01,
-            30.287,
-            30.698
-          ],
-          "unit": "$B"
-        }
-      },
-      "tweets": [
-        "USDC transfer volume on ethereum just hit an ATH per @jerallaire. the number that jumps out: $1.7T monthly, up ~250% YoY.\n\nwhat's driving it:\n\n1. DeFi settlement activity still growing\n2. AI agents using USDC for programmatic payments\n3. institutional preference for regulated rails\n\nthe interesting question isn't whether stablecoins win settlement -- it's who owns distribution when they do",
-        "fyi USDC ethereum transfer volume is at an all-time high. for context, monthly volume was ~$500B a year ago -- now it's $1.7T.\n\nstablecoin velocity is one of the cleanest leading indicators for real economic activity onchain. if this trend holds, it's constructive for both DeFi liquidity and for payment networks building on regulated rails (h't @circle)"
-      ]
-    },
-    {
-      "id": "ai-3dd1aaaf2c",
-      "cycle": "2026-03-09T14:00:00Z",
-      "domain": "ai",
-      "sentiment": "bullish",
-      "title": "Frontier model cycle accelerates: GPT-5.4 rollout + security agents; model capability -> enterprise spend",
-      "summary": "OpenAI rolled out GPT-5.4 alongside a new security agent product. Anthropic is also pushing frontier models into vulnerability detection. The narrative is shifting: AI revenue is moving from copilot subscriptions to mission-critical workflow automation.",
-      "why": "Security is a near-term wedge with clear ROI \u2014 enterprises already have budget lines for it. When AI capability becomes a recurring enterprise spend item (not a consumer subscription), that changes the valuation framework for frontier labs.",
-      "voices": [
-        {
-          "handle": "@OpenAI",
-          "url": "https://x.com/OpenAI"
-        },
-        {
-          "handle": "@AnthropicAI",
-          "url": "https://x.com/AnthropicAI"
-        }
-      ],
-      "sources": [
-        { "label": "@OpenAI — GPT-5.4 Announcement", "url": "https://x.com/OpenAI" },
-        { "label": "@AnthropicAI — Security Capabilities", "url": "https://x.com/AnthropicAI" }
-      ],
-      "dataSources": [],
-      "artemisData": null,
-      "tweets": [
-        "openai just rolled out GPT-5.4 alongside a new security agent product. anthropic also pushing frontier models into vulnerability detection.\n\nwhat's interesting: AI revenue is shifting from 'copilot seat licenses' to 'mission-critical workflow automation' -- security, compliance, ops.\n\nthat's a very different valuation framework. recurring enterprise budgets vs consumer subscriptions (h't @OpenAI @AnthropicAI)",
-        "fyi the frontier model cycle is speeding up again:\n\n1. GPT-5.4 rolling out (more factual, more efficient)\n2. openai shipping security agents for appsec\n3. anthropic highlighting vulnerability-finding capabilities\n\nthe pattern: AI capability is becoming a line-item in enterprise security budgets. that's where durable revenue lives, not wrapper apps"
-      ]
-    },
-    {
-      "id": "fintech-9fde8f18c9",
-      "cycle": "2026-03-09T14:00:00Z",
+      "id": "fintech-20260314-revolut-full-uk-license",
+      "cycle": "2026-03-14T07:00:00Z",
       "domain": "fintech",
       "sentiment": "bullish",
-      "title": "Agentic back-office goes mainstream: a16z leads $30M Lio Series A for procurement agents",
-      "summary": "a16z led a $30M Series A in Lio for end-to-end procurement agents \u2014 quotes, negotiation, vendor onboarding, ERP execution, all automated. Global procurement spend is $13T+, and this is the first funded bet on agents replacing the full workflow loop.",
-      "why": "This validates 'agentic enterprise' beyond copilots \u2014 actual end-to-end execution in messy enterprise workflows. The fintech angle: once you own procurement execution, settlement becomes an API decision, and stablecoin rails are the natural next pull-through.",
+      "title": "Revolut Gets Full UK Banking License After 4-Year Wait — $75B Valuation",
+      "summary": "Revolut received full UK banking license approval from the BoE's PRA after a four-year application process. UK customers (13M) now get FSCS protection up to £120,000, up from a £50,000 deposit cap during mobilisation.",
+      "why": "This is the highest-profile neobank license grant in UK history. At $75B valuation, Revolut is now worth more than most traditional UK banks. Sets the bar for fintech-to-bank transitions globally.",
       "voices": [
-        {
-          "handle": "@a16z",
-          "url": "https://x.com/a16z"
-        },
-        {
-          "handle": "@askvladi",
-          "url": "https://x.com/askvladi"
-        }
+        { "handle": "@FinancialTimes", "url": "https://x.com/FT/status/2031762345517518928" }
       ],
       "sources": [
-        { "label": "@a16z — Lio Series A Announcement", "url": "https://x.com/a16z" },
-        { "label": "@askvladi on X", "url": "https://x.com/askvladi" }
+        { "label": "Reuters — Revolut Full UK Banking License", "url": "https://www.reuters.com/business/finance/revolut-gets-full-uk-banking-licence-after-years-long-wait-2026-03-11/" },
+        { "label": "Banking Dive — License Details", "url": "https://www.bankingdive.com/news/revolut-gets-full-uk-license-storonsky-pra-mobilization/814457/" },
+        { "label": "@FT on X", "url": "https://x.com/FT/status/2031762345517518928" }
       ],
       "dataSources": [],
       "artemisData": null,
       "tweets": [
-        "a16z just led a $30M Series A in Lio for procurement agents -- quotes, negotiation, vendor onboarding, ERP execution, all end-to-end.\n\nwhy this matters: procurement is one of the messiest enterprise workflows. if agents can handle the full loop, it validates 'agentic enterprise' beyond copilots.\n\nthe fintech angle: once you own procurement execution, settlement becomes an API decision. watch for stablecoin rails to get pulled in (h't @a16z)",
-        "fyi the 'agentic enterprise' thesis just got more concrete:\n\n1. a16z led $30M Series A in Lio (procurement agents)\n2. end-to-end: quotes → negotiation → vendor onboarding → ERP execution\n3. replacing headcount scaling with an 'execution layer'\n\nfor context, global procurement spend is $13T+. if agents can eat even 5% of that workflow, the TAM math gets interesting fast"
+        "revolut just got its full UK banking license after a 4-year wait. at $75B valuation, it's now worth more than most traditional UK banks.\n\nwhat changes:\n\n1. FSCS deposit protection up to £120K (was capped at £50K during mobilisation)\n2. 13M UK customers now fully covered\n3. clears the path for lending products + balance sheet expansion\n\nthe question is which neobank follows -- and whether the regulatory bar stays this high (h't @FT)",
+        "fyi revolut received full UK banking license from BoE PRA. four-year process, finally done.\n\nfor context, at $75B valuation revolut is the most valuable fintech in europe by a wide margin. the license unlocks lending, FSCS protection, and a much bigger balance sheet.\n\nthis is the highest-profile neobank → bank transition we've seen"
+      ]
+    },
+    {
+      "id": "stablecoins-20260314-feb-transfer-volume-ath",
+      "cycle": "2026-03-14T07:00:00Z",
+      "domain": "stablecoins",
+      "sentiment": "bullish",
+      "title": "Stablecoin Transfer Volume Hits $1.8T ATH in February — USDC Commands 70% Share",
+      "summary": "February stablecoin transfer volume hit $1.8T, an all-time high per Allium data. USDC captured ~70% share ($1.26T) while monthly adjusted transactions exceeded 200M — tripled since early 2024.",
+      "why": "Transfer volume is the cleanest measure of real stablecoin utility. USDC's 70% share at these volumes validates regulated rails winning institutional flow. Transaction count tripling signals broadening adoption, not just larger trades.",
+      "voices": [
+        { "handle": "@AlliumLabs", "url": "https://x.com/AlliumLabs/status/2030403146355527953" }
+      ],
+      "sources": [
+        { "label": "CoinTelegraph via TradingView — Feb Stablecoin Volume", "url": "https://www.tradingview.com/news/cointelegraph:e11b3f23c094b:0-usdc-shines-in-february-as-stablecoin-transfer-volume-hits-1-8t-all-time-high/" },
+        { "label": "@AlliumLabs — Transaction Count Data", "url": "https://x.com/AlliumLabs/status/2030403146355527953" },
+        { "label": "DefiLlama — Stablecoin Market Cap", "url": "https://defillama.com" }
+      ],
+      "dataSources": ["Artemis Stablecoin Dashboard"],
+      "artemisData": null,
+      "tweets": [
+        "february stablecoin transfer volume hit $1.8T -- all-time high per @AlliumLabs. USDC captured ~70% share.\n\nthe numbers that jump out:\n\n1. USDC alone: ~$1.26T in monthly transfers\n2. monthly transactions exceeded 200M (tripled since early 2024)\n3. stablecoin market cap: $316B and climbing\n\nthis isn't just bigger trades. transaction count tripling means the user base is broadening. question is how much of this is DeFi settlement vs emerging use cases like agent payments",
+        "fyi stablecoin transfer volume just set a new ATH at $1.8T in february.\n\nfor context, USDC alone did ~$1.26T (70% share). a year ago that number was closer to $500B.\n\nwhat's interesting: it's not just volume -- monthly transactions exceeded 200M, tripled since early 2024. that's a broadening adoption curve, not just whale activity (h't @AlliumLabs)"
+      ]
+    },
+    {
+      "id": "predmarkets-20260314-kalshi-polymarket-20b-valuations",
+      "cycle": "2026-03-14T07:00:00Z",
+      "domain": "predmarkets",
+      "sentiment": "bullish",
+      "title": "Kalshi and Polymarket Both Targeting ~$20B Valuations — Up From $11B and $9B",
+      "summary": "Yahoo Finance/Covers reports that Kalshi and Polymarket are both in talks at ~$20B valuations, roughly doubling their prior marks ($11B and $9B respectively). This comes amid conflicting court rulings on event contracts and growing CFTC regulatory scrutiny.",
+      "why": "Prediction markets going from novelty to $20B valuations in under 2 years signals that information markets are being priced as critical infrastructure. The valuation surge is happening despite regulatory uncertainty — meaning the market is betting on resolution, not retreat.",
+      "voices": [
+        { "handle": "@Polymarket", "url": "https://x.com/Polymarket" }
+      ],
+      "sources": [
+        { "label": "Yahoo Finance — Kalshi & Polymarket $20B Valuations", "url": "https://finance.yahoo.com/news/prediction-markets-kalshi-polymarket-reportedly-160500719.html" },
+        { "label": "NBC News — Ohio Judge Kalshi Ruling", "url": "https://www.nbcnews.com/news/us-news/ohio-judge-rules-kalshi-sports-betting-must-adhere-state-law-rcna262721" }
+      ],
+      "dataSources": [],
+      "artemisData": null,
+      "tweets": [
+        "kalshi and polymarket are both reportedly targeting ~$20B valuations per @Yahoo.\n\nfor context:\n\n1. kalshi's prior mark: $11B\n2. polymarket's prior mark: $9B\n3. roughly 2x in under a year for both\n\nthis is happening while an ohio judge just ruled kalshi sports contracts = sports betting AND the CFTC is hinting at formal rulemaking.\n\nthe market is betting on regulatory resolution, not retreat. question is whether that bet pays off",
+        "fyi prediction market valuations are surging:\n\nkalshi: ~$20B (was $11B)\npolymarket: ~$20B (was $9B)\n\nwhat's interesting: these marks are doubling during a period of active regulatory conflict -- ohio ruling, CFTC scrutiny, conflicting court decisions.\n\nthe implied bet: information markets are becoming infrastructure, and the regulatory overhang resolves favorably (h't @Yahoo)"
       ]
     }
   ]

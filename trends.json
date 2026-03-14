@@ -1,6 +1,72 @@
 {
-  "updated": "2026-03-14T07:05:00Z",
+  "updated": "2026-03-14T09:05:00Z",
   "trends": [
+    {
+      "id": "ai-20260314-cursor-anysphere-5b-raise-60b",
+      "cycle": "2026-03-14T09:01:00Z",
+      "domain": "ai",
+      "sentiment": "bullish",
+      "title": "Cursor (Anysphere) Exploring $5B Raise at Up to $60B Valuation",
+      "summary": "Newcomer reports that Cursor-maker Anysphere is exploring a $5B fundraise at a valuation of up to $60B. This would make it one of the largest AI raises ever and puts it in the same valuation tier as Anthropic.",
+      "why": "A coding assistant reaching $60B valuation validates that AI-native developer tools are being priced as platform companies, not features. It also signals that the 'AI application layer' can command frontier-lab-tier valuations when distribution is strong enough.",
+      "voices": [
+        { "handle": "@EricNewcomer", "url": "https://x.com/EricNewcomer" }
+      ],
+      "sources": [
+        { "label": "Newcomer — Cursor Weighs Fresh Fundraise", "url": "https://www.newcomer.co/p/cursor-weighs-fresh-fundraise-as" }
+      ],
+      "dataSources": [],
+      "artemisData": null,
+      "tweets": [
+        "cursor (anysphere) reportedly exploring a $5B raise at up to $60B valuation per @EricNewcomer.\n\nfor context:\n\n1. that's anthropic-tier valuation for a coding assistant\n2. cursor launched ~2 years ago\n3. this would be one of the largest AI raises ever\n\nwhat's interesting: AI application layer companies can now command the same valuations as frontier labs -- if distribution is strong enough. question is where the ceiling is (h't @EricNewcomer)",
+        "fyi cursor's parent anysphere is weighing a $5B raise at up to $60B.\n\nfor context, anthropic just raised at $60B too. but anthropic is a frontier lab training models. cursor is a coding tool built on top of those models.\n\nthe implied thesis: owning the developer workflow is as valuable as owning the model. that's a big bet on the application layer"
+      ]
+    },
+    {
+      "id": "predmarkets-20260314-cftc-rulemaking-event-contracts",
+      "cycle": "2026-03-14T09:01:00Z",
+      "domain": "predmarkets",
+      "sentiment": "contested",
+      "title": "CFTC Launches Event-Contract Rulemaking Amid Conflicting Kalshi Court Rulings",
+      "summary": "The CFTC is moving toward formal rulemaking on event contracts, including integrity and manipulation guidance, after an Ohio judge ruled Kalshi's sports contracts constitute sports betting. This comes alongside reports of Kalshi and Polymarket targeting $20B valuations.",
+      "why": "Formal CFTC rulemaking could either legitimize prediction markets with clear rules or restrict them with onerous compliance. The outcome shapes whether $20B valuations hold — and whether prediction markets become regulated infrastructure or face a fragmented state-by-state reality.",
+      "voices": [
+        { "handle": "@Polymarket", "url": "https://x.com/Polymarket" }
+      ],
+      "sources": [
+        { "label": "ESPN — Kalshi Courts & CFTC", "url": "https://www.espn.com/espn/betting/story/_/id/48186339/kalshi-courts-cftc" },
+        { "label": "Marketplace — CFTC Considers Regulating Prediction Markets", "url": "https://www.marketplace.org/story/2026/03/13/cftc-considers-regulating-prediction-markets-like-kalshi" }
+      ],
+      "dataSources": [],
+      "artemisData": null,
+      "tweets": [
+        "the CFTC is now moving toward formal rulemaking on event contracts per @ESPN and @Marketplace.\n\nthis comes after:\n\n1. ohio judge ruled kalshi sports contracts = sports betting\n2. conflicting court decisions across jurisdictions\n3. kalshi + polymarket both targeting ~$20B valuations\n\nthe outcome matters: clear federal rules could legitimize the space. state-by-state fragmentation could slow it down for years. this is the regulatory moment for prediction markets",
+        "fyi CFTC is kicking off event-contract rulemaking -- integrity guidance, manipulation rules, the works.\n\nfor context, prediction markets are in a weird spot: $20B valuations on one hand, an ohio judge calling sports contracts 'sports betting' on the other.\n\nformal rulemaking is how this gets resolved one way or another. watch for comment periods and draft rules over the next 6-12 months"
+      ]
+    },
+    {
+      "id": "stablecoins-20260314-weekly-mcap-expansion-usdc-81b",
+      "cycle": "2026-03-14T09:01:00Z",
+      "domain": "stablecoins",
+      "sentiment": "bullish",
+      "title": "Stablecoin Market Cap Adds $3B in a Week — USDC Supply Hits $81.1B",
+      "summary": "DefiLlama data shows stablecoin market cap grew +$3.073B in the past week. Artemis shows USDC supply at $81.1B, continuing its steady climb. Total stablecoin market cap now exceeds $316B.",
+      "why": "Consistent weekly supply expansion is the clearest signal of capital entering the onchain economy. USDC at $81B+ with steady growth suggests institutional flows are sustained, not episodic — important for anyone modeling stablecoin adoption curves.",
+      "voices": [
+        { "handle": "@DefiLlama", "url": "https://x.com/DefiLlama/status/2031941249855344893" }
+      ],
+      "sources": [
+        { "label": "@DefiLlama — Weekly Stablecoin Supply Tweet", "url": "https://x.com/DefiLlama/status/2031941249855344893" },
+        { "label": "DefiLlama — Stablecoins Dashboard", "url": "https://defillama.com/stablecoins" },
+        { "label": "Artemis — USDC Supply", "url": "https://app.artemisanalytics.com/asset/usdc" }
+      ],
+      "dataSources": ["Artemis Stablecoin Dashboard"],
+      "artemisData": null,
+      "tweets": [
+        "stablecoin market cap added $3.07B in the past week per @DefiLlama. USDC supply now at $81.1B per artemis.\n\n1. total stablecoin mcap: $316B+\n2. USDC growing steadily -- not episodic spikes, sustained weekly expansion\n3. this on top of $1.8T monthly transfer volume ATH\n\nconsistent supply growth = capital entering the onchain economy at a steady pace. that's the adoption signal to track, not price action",
+        "fyi stablecoin supply keeps grinding higher:\n\n+$3.07B added this week. USDC at $81.1B. total mcap past $316B.\n\nfor context, weekly supply expansion has been positive for 8+ consecutive weeks. that's not a trade, it's a trend. regulated rails (USDC) are pulling most of the new capital (h't @DefiLlama)"
+      ]
+    },
     {
       "id": "macro-20260314-timiraos-intermeeting-cut-chatter",
       "cycle": "2026-03-14T04:58:00Z",
@@ -21,74 +87,6 @@
       "tweets": [
         "the white house is now floating an intermeeting fed cut.\n\nfor context, the last one was march 15, 2020 -- a stress regime tool.\n\n1. next scheduled decision is in ~5 business days\n2. markets currently pricing 'no change'\n3. even talking about it can move rate vol + 2Y yields\n\nwhat would have to break for the fed to actually go early? (h't @NickTimiraos)",
         "fyi timiraos is flagging intermeeting cut chatter out of the white house. last one was mar 2020.\n\nmaybe it's just politics. but if front-end yields + rate vol start moving on it, that's your tell (per @NickTimiraos)"
-      ]
-    },
-    {
-      "id": "fintech-20260314-revolut-full-uk-license",
-      "cycle": "2026-03-14T07:00:00Z",
-      "domain": "fintech",
-      "sentiment": "bullish",
-      "title": "Revolut Gets Full UK Banking License After 4-Year Wait — $75B Valuation",
-      "summary": "Revolut received full UK banking license approval from the BoE's PRA after a four-year application process. UK customers (13M) now get FSCS protection up to £120,000, up from a £50,000 deposit cap during mobilisation.",
-      "why": "This is the highest-profile neobank license grant in UK history. At $75B valuation, Revolut is now worth more than most traditional UK banks. Sets the bar for fintech-to-bank transitions globally.",
-      "voices": [
-        { "handle": "@FinancialTimes", "url": "https://x.com/FT/status/2031762345517518928" }
-      ],
-      "sources": [
-        { "label": "Reuters — Revolut Full UK Banking License", "url": "https://www.reuters.com/business/finance/revolut-gets-full-uk-banking-licence-after-years-long-wait-2026-03-11/" },
-        { "label": "Banking Dive — License Details", "url": "https://www.bankingdive.com/news/revolut-gets-full-uk-license-storonsky-pra-mobilization/814457/" },
-        { "label": "@FT on X", "url": "https://x.com/FT/status/2031762345517518928" }
-      ],
-      "dataSources": [],
-      "artemisData": null,
-      "tweets": [
-        "revolut just got its full UK banking license after a 4-year wait. at $75B valuation, it's now worth more than most traditional UK banks.\n\nwhat changes:\n\n1. FSCS deposit protection up to £120K (was capped at £50K during mobilisation)\n2. 13M UK customers now fully covered\n3. clears the path for lending products + balance sheet expansion\n\nthe question is which neobank follows -- and whether the regulatory bar stays this high (h't @FT)",
-        "fyi revolut received full UK banking license from BoE PRA. four-year process, finally done.\n\nfor context, at $75B valuation revolut is the most valuable fintech in europe by a wide margin. the license unlocks lending, FSCS protection, and a much bigger balance sheet.\n\nthis is the highest-profile neobank → bank transition we've seen"
-      ]
-    },
-    {
-      "id": "stablecoins-20260314-feb-transfer-volume-ath",
-      "cycle": "2026-03-14T07:00:00Z",
-      "domain": "stablecoins",
-      "sentiment": "bullish",
-      "title": "Stablecoin Transfer Volume Hits $1.8T ATH in February — USDC Commands 70% Share",
-      "summary": "February stablecoin transfer volume hit $1.8T, an all-time high per Allium data. USDC captured ~70% share ($1.26T) while monthly adjusted transactions exceeded 200M — tripled since early 2024.",
-      "why": "Transfer volume is the cleanest measure of real stablecoin utility. USDC's 70% share at these volumes validates regulated rails winning institutional flow. Transaction count tripling signals broadening adoption, not just larger trades.",
-      "voices": [
-        { "handle": "@AlliumLabs", "url": "https://x.com/AlliumLabs/status/2030403146355527953" }
-      ],
-      "sources": [
-        { "label": "CoinTelegraph via TradingView — Feb Stablecoin Volume", "url": "https://www.tradingview.com/news/cointelegraph:e11b3f23c094b:0-usdc-shines-in-february-as-stablecoin-transfer-volume-hits-1-8t-all-time-high/" },
-        { "label": "@AlliumLabs — Transaction Count Data", "url": "https://x.com/AlliumLabs/status/2030403146355527953" },
-        { "label": "DefiLlama — Stablecoin Market Cap", "url": "https://defillama.com" }
-      ],
-      "dataSources": ["Artemis Stablecoin Dashboard"],
-      "artemisData": null,
-      "tweets": [
-        "february stablecoin transfer volume hit $1.8T -- all-time high per @AlliumLabs. USDC captured ~70% share.\n\nthe numbers that jump out:\n\n1. USDC alone: ~$1.26T in monthly transfers\n2. monthly transactions exceeded 200M (tripled since early 2024)\n3. stablecoin market cap: $316B and climbing\n\nthis isn't just bigger trades. transaction count tripling means the user base is broadening. question is how much of this is DeFi settlement vs emerging use cases like agent payments",
-        "fyi stablecoin transfer volume just set a new ATH at $1.8T in february.\n\nfor context, USDC alone did ~$1.26T (70% share). a year ago that number was closer to $500B.\n\nwhat's interesting: it's not just volume -- monthly transactions exceeded 200M, tripled since early 2024. that's a broadening adoption curve, not just whale activity (h't @AlliumLabs)"
-      ]
-    },
-    {
-      "id": "predmarkets-20260314-kalshi-polymarket-20b-valuations",
-      "cycle": "2026-03-14T07:00:00Z",
-      "domain": "predmarkets",
-      "sentiment": "bullish",
-      "title": "Kalshi and Polymarket Both Targeting ~$20B Valuations — Up From $11B and $9B",
-      "summary": "Yahoo Finance/Covers reports that Kalshi and Polymarket are both in talks at ~$20B valuations, roughly doubling their prior marks ($11B and $9B respectively). This comes amid conflicting court rulings on event contracts and growing CFTC regulatory scrutiny.",
-      "why": "Prediction markets going from novelty to $20B valuations in under 2 years signals that information markets are being priced as critical infrastructure. The valuation surge is happening despite regulatory uncertainty — meaning the market is betting on resolution, not retreat.",
-      "voices": [
-        { "handle": "@Polymarket", "url": "https://x.com/Polymarket" }
-      ],
-      "sources": [
-        { "label": "Yahoo Finance — Kalshi & Polymarket $20B Valuations", "url": "https://finance.yahoo.com/news/prediction-markets-kalshi-polymarket-reportedly-160500719.html" },
-        { "label": "NBC News — Ohio Judge Kalshi Ruling", "url": "https://www.nbcnews.com/news/us-news/ohio-judge-rules-kalshi-sports-betting-must-adhere-state-law-rcna262721" }
-      ],
-      "dataSources": [],
-      "artemisData": null,
-      "tweets": [
-        "kalshi and polymarket are both reportedly targeting ~$20B valuations per @Yahoo.\n\nfor context:\n\n1. kalshi's prior mark: $11B\n2. polymarket's prior mark: $9B\n3. roughly 2x in under a year for both\n\nthis is happening while an ohio judge just ruled kalshi sports contracts = sports betting AND the CFTC is hinting at formal rulemaking.\n\nthe market is betting on regulatory resolution, not retreat. question is whether that bet pays off",
-        "fyi prediction market valuations are surging:\n\nkalshi: ~$20B (was $11B)\npolymarket: ~$20B (was $9B)\n\nwhat's interesting: these marks are doubling during a period of active regulatory conflict -- ohio ruling, CFTC scrutiny, conflicting court decisions.\n\nthe implied bet: information markets are becoming infrastructure, and the regulatory overhang resolves favorably (h't @Yahoo)"
       ]
     }
   ]
